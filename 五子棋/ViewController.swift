@@ -91,18 +91,24 @@ class ViewController: UIViewController {
             for i in -4...4 {   //横向
                 if matrix[button.row, (button.column) + i].flag == matrix[button.row, button.column].flag {
                     parallel += 1
+                } else {
+                    break
                 }
             }
         } else if button.parallelLeft == false && button.parallelRight == true {
             for i in -button.column...4 {
                 if matrix[button.row, (button.column) + i].flag == matrix[button.row, button.column].flag {
                     parallel += 1
+                } else {
+                    break
                 }
             }
         } else if button.parallelLeft == true && button.parallelRight == false {
             for i in -4...(14 - button.column) {
                 if matrix[button.row, (button.column) + i].flag == matrix[button.row, button.column].flag {
                     parallel += 1
+                } else {
+                    break
                 }
             }
         }
@@ -111,18 +117,24 @@ class ViewController: UIViewController {
             for i in -4...4 {   //纵向
                 if matrix[(button.row) + i, button.column].flag == matrix[button.row, button.column].flag {
                     vertical += 1
+                } else {
+                    break
                 }
             }
         } else if button.verticalUp == false && button.verticalDown == true {
             for i in -button.row...4 {
                 if matrix[(button.row) + i, button.column].flag == matrix[button.row, button.column].flag {
                     vertical += 1
+                } else {
+                    break
                 }
             }
         } else if button.verticalUp == true && button.verticalDown == false {
             for i in -4...(14 - button.row) {
                 if matrix[(button.row) + i, button.column].flag == matrix[button.row, button.column].flag {
                     vertical += 1
+                } else {
+                    break
                 }
             }
         }
@@ -131,6 +143,8 @@ class ViewController: UIViewController {
             for i in -4...4 {   //左斜
                 if matrix[(button.row) + i, (button.column) + i].flag == matrix[button.row, button.column].flag {
                     leftOblique += 1
+                } else {
+                    break
                 }
             }
         } else if button.leftObliqueUp == false && button.leftObliqueDown == true {
@@ -138,12 +152,16 @@ class ViewController: UIViewController {
                 for i in -button.row...4 {
                     if matrix[(button.row) + i, (button.column) + i].flag == matrix[button.row, button.column].flag {
                         leftOblique += 1
+                    } else {
+                        break
                     }
                 }
             } else {
                 for i in -button.column...4 {
                     if matrix[(button.row) + i, (button.column) + i].flag == matrix[button.row, button.column].flag {
                         leftOblique += 1
+                    } else {
+                        break
                     }
                 }
             }
@@ -152,12 +170,16 @@ class ViewController: UIViewController {
                 for i in -4...(14 - button.row) {
                     if matrix[(button.row) + i, (button.column) + i].flag == matrix[button.row, button.column].flag {
                         leftOblique += 1
+                    } else {
+                        break
                     }
                 }
             } else {
                 for i in -4...(14 - button.column) {
                     if matrix[(button.row) + i, (button.column) + i].flag == matrix[button.row, button.column].flag {
                         leftOblique += 1
+                    } else {
+                        break
                     }
                 }
             }
@@ -167,6 +189,8 @@ class ViewController: UIViewController {
             for i in -4...4 {   //右斜
                 if matrix[(button.row) + i, (button.column) - i].flag == matrix[button.row, button.column].flag {
                     rightOblique += 1
+                } else {
+                    break
                 }
             }
         } else if button.rightObliqueUp == false && button.rightObliqueDown == true {
@@ -174,12 +198,16 @@ class ViewController: UIViewController {
                 for i in -button.row...4 {
                     if matrix[(button.row) + i, (button.column) - i].flag == matrix[button.row, button.column].flag {
                         rightOblique += 1
+                    } else {
+                        break
                     }
                 }
             } else {
                 for i in -(14 - button.column)...4 {
                     if matrix[(button.row) + i, (button.column) - i].flag == matrix[button.row, button.column].flag {
                         rightOblique += 1
+                    } else {
+                        break
                     }
                 }
             }
@@ -188,12 +216,16 @@ class ViewController: UIViewController {
                 for i in -4...button.column {
                     if matrix[(button.row) + i, (button.column) - i].flag == matrix[button.row, button.column].flag {
                         rightOblique += 1
+                    } else {
+                        break
                     }
                 }
             } else {
                 for i in -4...(14 - button.row) {
                     if matrix[(button.row) + i, (button.column) - i].flag == matrix[button.row, button.column].flag {
                         rightOblique += 1
+                    } else {
+                        break
                     }
                 }
             }
@@ -251,19 +283,19 @@ class ViewController: UIViewController {
             num -= 1
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initUIImageView()
         initButton()
         initUILabel()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-
+        
     }
-
-
+    
+    
 }
 
